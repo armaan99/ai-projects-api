@@ -1,0 +1,15 @@
+{
+  "builds": [
+    {
+      "src": "ai_models_apis/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "ai_models_apis/wsgi.py"
+    }
+  ]
+}
