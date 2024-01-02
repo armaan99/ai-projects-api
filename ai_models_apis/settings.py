@@ -26,13 +26,14 @@ SECRET_KEY = 'django-insecure-de%%d19z2n)nv-xcy-4i!&t0r+l^@s^#jp5th-l2@^x!ds3pxy
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'corsheaders',
+    'hdr_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,12 +74,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ai_models_apis.wsgi.application'
+# WSGI_APPLICATION = 'ai_models_apis.wsgi.application'
+WSGI_APPLICATION = 'ai_models_apis.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASES = {}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -127,7 +130,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-import os
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
