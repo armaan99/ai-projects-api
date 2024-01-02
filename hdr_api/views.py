@@ -42,4 +42,8 @@ def hdr_predict(request):
 
         except Exception as e:
             return HttpResponse("Some Server Error Occured")
+        
+    if request.method == 'GET':
+        return HttpResponse("Server Connection Established. Kindly send POST Request for prediction")
+
     return JsonResponse({'error': 'Invalid request method'}, status=400)
