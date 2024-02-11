@@ -26,14 +26,16 @@ SECRET_KEY = 'django-insecure-de%%d19z2n)nv-xcy-4i!&t0r+l^@s^#jp5th-l2@^x!ds3pxy
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'corsheaders',
-    'hdr_api',
+    # 'hdr_api',
+    # 'hdr_LeNet_api',
+    'lens_tryon_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
