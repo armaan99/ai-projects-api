@@ -97,7 +97,7 @@ def apply_lens(request):
             lens_img = cv2.resize(lens_img, (new_width, new_height), interpolation=cv2.INTER_AREA)
 
             # Setting offset value of coordinates for where to place the image
-            offset_x = int((face_img.shape[1] - lens_img.shape[1]) / 2)
+            offset_x = int(nose_tip_x - (lens_img.shape[1] / 2))
             offset_y = nose_tip_y
 
             # Overlay lens image on face image
